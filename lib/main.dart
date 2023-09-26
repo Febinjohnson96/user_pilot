@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:user_pilot/config/apptheme.dart';
 import 'package:user_pilot/config/routes.dart';
+import 'package:user_pilot/injector.dart' as injector;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await injector.init();
   runApp(const MyApp());
 }
 
