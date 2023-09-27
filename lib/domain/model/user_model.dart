@@ -27,18 +27,20 @@ class UserModel {
       this.address,
       this.company});
 
-      factory UserModel.fromJson(Map<String,dynamic> json){
-        return UserModel(
-          id: json['id'],
-          firstName: json['firstName'],
-          lastName: json['lastName'],
-          maidenName: json['maidenName'],
-          age: json['age'],
-          email: json['email'],
-          phone: json['phone'],
-          imageUrl: json['image'],
-          address: Address.fromJson(json['address']),
-          company: Company.fromJson(json['company'])
-        );
-      }
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
+      id: json['id'],
+      firstName: json['firstName'],
+      lastName: json['lastName'],
+      maidenName: json['maidenName'],
+      age: json['age'],
+      email: json['email'],
+      phone: json['phone'],
+      imageUrl: json['image'],
+      address:
+          json['address'] != null ? Address.fromJson(json['address']) : null,
+      company:
+          json['company'] != null ? Company.fromJson(json['company']) : null,
+    );
+  }
 }

@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:user_pilot/config/app_exceptions.dart';
 
 class ApiHelper {
-  final kbaseUrl = 'https://dummyjson.com/';
+  final kbaseUrl = 'dummyjson.com';
   Future<dynamic> get({
     required String endpoint,
     required Map<String, String> params,
