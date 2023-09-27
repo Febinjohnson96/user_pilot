@@ -19,7 +19,7 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
-  void fetchUsersInit() async{
+  void fetchUsersInit() async {
     _isloading(true);
     await fetchUsers().then((value) => _users(value));
     _isloading(false);
@@ -29,5 +29,9 @@ class HomeController extends GetxController {
     const params = UserRequestParam(limit: '50', skip: '0');
     final response = await _apiHelper.getUserList(params);
     return response;
+  }
+
+  void onTapCard(UserModel user) {
+    Get.toNamed('/user_page', arguments: user);
   }
 }

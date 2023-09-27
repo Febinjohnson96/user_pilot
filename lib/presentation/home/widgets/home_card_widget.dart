@@ -30,26 +30,28 @@ class HomeCardWidget extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Flexible(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                firstName.toString(),
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              Text(
-                lastName.toString(),
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                company.toString(),
-                style: Theme.of(context).textTheme.bodySmall,
-              )
-            ],
+              child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  firstName.toString(),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Text(
+                  lastName.toString(),
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Text(
+                  company.toString(),
+                  style: Theme.of(context).textTheme.bodySmall,
+                )
+              ],
+            ),
           ))
         ],
       ),

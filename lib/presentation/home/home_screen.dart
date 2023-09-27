@@ -38,23 +38,30 @@ class HomeScreen extends StatelessWidget {
                               width: 500.w,
                               child: ListView.separated(
                                 itemBuilder: (context, index) {
-                                  return HomeCardWidget(
-                                          firstName: controller
-                                              .users[index].firstName
-                                              .toString(),
-                                          lastName: controller
-                                              .users[index].lastName
-                                              .toString(),
-                                          company: controller
-                                                  .users[index].company?.name ??
-                                              '',
-                                          imageUrl: controller
-                                                  .users[index].imageUrl ??
-                                              '')
-                                      .animate()
-                                      .fadeIn()
-                                      .move(delay: 00.ms, duration: 300.ms)
-                                      .scale();
+                                  return GestureDetector(
+                                    onTap: () => controller
+                                        .onTapCard(controller.users[index]),
+                                    child: Hero(
+                                      tag: controller.users[index],
+                                      child: HomeCardWidget(
+                                              firstName: controller
+                                                  .users[index].firstName
+                                                  .toString(),
+                                              lastName: controller
+                                                  .users[index].lastName
+                                                  .toString(),
+                                              company: controller.users[index]
+                                                      .company?.name ??
+                                                  '',
+                                              imageUrl: controller
+                                                      .users[index].imageUrl ??
+                                                  '')
+                                          .animate()
+                                          .fadeIn()
+                                          .move(delay: 00.ms, duration: 300.ms)
+                                          .scale(),
+                                    ),
+                                  );
                                 },
                                 itemCount: controller.users.length,
                                 separatorBuilder: (context, index) =>
