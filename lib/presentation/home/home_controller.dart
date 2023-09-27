@@ -26,7 +26,7 @@ class HomeController extends GetxController {
   }
 
   Future<List<UserModel>> fetchUsers() async {
-    const params = UserRequestParam(limit: '10', skip: '0');
+    const params = UserRequestParam(limit: '50', skip: '0');
     final response = await _apiHelper.getUserList(params);
     return response;
   }
